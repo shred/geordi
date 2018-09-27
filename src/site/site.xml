@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * geordi
+ *
+ * Copyright (C) 2018 Richard "Shred" Körber
+ *   https://github.com/shred/geordi
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+-->
+<project xmlns="http://maven.apache.org/DECORATION/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd">
+  <publishDate position="right"/>
+  <version position="right"/>
+  <body>
+    <head>
+      <!-- Workaround for https://issues.apache.org/jira/browse/DOXIA-571 -->
+      <![CDATA[<script type="text/javascript">$(document).ready(function(){$(".source").addClass("prettyprint");prettyPrint();});</script>]]>
+    </head>
+    <links>
+      <item name="GitHub" href="https://github.com/shred/geordi"/>
+    </links>
+    <breadcrumbs>
+      <item name="shredzone.org" href="https://shredzone.org"/>
+      <item name="geordi" href="index.html"/>
+    </breadcrumbs>
+    <menu name="Documentation">
+      <item name="Introduction" href="index.html"/>
+      <item name="How to Use" href="usage/index.html">
+        <item name="Installation" href="usage/installation.html"/>
+        <item name="Configuration" href="usage/configuration.html"/>
+        <item name="Evaluation" href="usage/evaluation.html"/>
+        <item name="Housekeeping" href="usage/housekeeping.html"/>
+      </item>
+      <item name="Supported Devices" href="device/index.html">
+        <item name="Aquaero" href="device/aquaero.html"/>
+        <item name="Homematic" href="device/homematic.html"/>
+        <item name="Particulates" href="device/dusty.html"/>
+      </item>
+    </menu>
+    <menu ref="modules"/>
+    <menu ref="reports"/>
+  </body>
+
+  <skin>
+    <groupId>org.apache.maven.skins</groupId>
+    <artifactId>maven-fluido-skin</artifactId>
+    <version>1.7</version>
+  </skin>
+</project>
