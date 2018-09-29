@@ -15,6 +15,8 @@ You can download a precompiled `geordi.jar` file [at GitHub](https://github.com/
 
 To build Geordi yourself, check out the project [at GitHub](https://github.com/shred/geordi) and build it with maven (`mvn clean install`). You will then find the `geordi.jar` file in the `target` folder of your checkout.
 
+For RedHat based systems, there is also a rpm file [at GitHub](https://github.com/shred/geordi/releases). After installation, just edit the `/etc/geordi.conf` file and start Geordi via systemd as described below.
+
 ## Database
 
 Create a new Postgresql database for Geordi, then create the tables and sequences:

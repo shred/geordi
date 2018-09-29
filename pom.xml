@@ -97,6 +97,60 @@
                 </executions>
             </plugin>
             <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>rpm-maven-plugin</artifactId>
+                <version>2.2.0</version>
+                <configuration>
+                    <name>geordi</name>
+                    <description>A tool that collects and stores sensor data.</description>
+                    <group>Applications/System</group><!-- is deprecated, but required?! -->
+                    <license>GPLv3</license>
+                    <buildRequires>
+                        <buildRequire>systemd</buildRequire>
+                    </buildRequires>
+                    <requires>
+                        <require>java-1.8.0-openjdk</require>
+                    </requires>
+                    <mappings>
+                        <mapping>
+                            <directory>%{_exec_prefix}/lib/geordi</directory>
+                            <filemode>755</filemode>
+                            <sources>
+                                <source>
+                                    <location>target/geordi.jar</location>
+                                </source>
+                            </sources>
+                        </mapping>
+                        <mapping>
+                            <directory>%{_sysconfdir}</directory>
+                            <directoryIncluded>false</directoryIncluded>
+                            <configuration>true</configuration>
+                            <username>root</username>
+                            <groupname>root</groupname>
+                            <filemode>600</filemode>
+                            <sources>
+                                <source>
+                                    <location>src/main/rpm/geordi.conf</location>
+                                </source>
+                            </sources>
+                        </mapping>
+                        <mapping>
+                            <directory>%{_unitdir}</directory>
+                            <directoryIncluded>false</directoryIncluded>
+                            <filemode>644</filemode>
+                            <sources>
+                                <source>
+                                    <location>src/main/rpm/geordi.service</location>
+                                </source>
+                            </sources>
+                        </mapping>
+                    </mappings>
+                    <defineStatements>
+                        <defineStatement>_unpackaged_files_terminate_build 0</defineStatement>
+                    </defineStatements>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.7</version>

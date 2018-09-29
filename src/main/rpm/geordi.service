@@ -1,0 +1,14 @@
+[Unit]
+Description=Geordi, the sensor poller
+
+[Service]
+EnvironmentFile=/etc/geordi.conf
+User=nobody
+ExecStart=/usr/bin/java -jar /usr/lib/geordi/geordi.jar
+SuccessExitStatus=143
+TimeoutStopSec=10
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
