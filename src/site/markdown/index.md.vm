@@ -21,6 +21,7 @@ Supported Sensors
 * [Homematic](./device/homematic.html) home automation devices
 * [luftdaten.info](./device/dusty.html) particulates sensors
 * [Aquaero](./device/aquaero.html) fan controllers
+* [AVM](./device/avm.html) smart home devices
 
 Open Source
 -----------

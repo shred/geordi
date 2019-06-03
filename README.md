@@ -18,6 +18,7 @@ It is written in Java and runs on any operating system.
 * [Homematic](https://www.eq-3.de/) home automation devices (via CCU2, CCU3)
 * [luftdaten.info](https://luftdaten.info/) particulates sensors
 * [Aquaero](https://aquacomputer.de/aquaero-5.html) fan controllers (via [Pyquaero](https://github.com/shred/pyquaero))
+* [AVM](https://avm.de) smart home components (via FRITZ!Box).
 
 Other sensor sources can be added easily.
 

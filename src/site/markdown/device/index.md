@@ -3,6 +3,7 @@
 A device is a piece of hardware that is equipped with sensors. Geordi knows a set of device types already, so it is easy to get sensor readings from them:
 
 * [Aquaero](./aquaero.html) fan controllers by Aqua Computer
+* [AVM](./avm.html) smart home devices by AVM GmbH
 * [Particulates Sensor](./dusty.html) by [luftdaten.info](https://luftdaten.info/)
 * [Homematic](./homematic.html) home automation by eQ-3
 

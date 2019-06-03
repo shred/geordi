@@ -23,6 +23,7 @@ import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
 import org.quartz.impl.StdSchedulerFactory;
 import org.shredzone.geordi.device.AquaeroDevice;
+import org.shredzone.geordi.device.AvmDevice;
 import org.shredzone.geordi.device.Ccu2Device;
 import org.shredzone.geordi.device.Device;
 import org.shredzone.geordi.device.DustyDevice;
@@ -59,6 +60,7 @@ public class GeordiModule extends AbstractModule {
 
         MapBinder<String, Device> mapbinder = MapBinder.newMapBinder(binder(), String.class, Device.class);
         mapbinder.addBinding("aquaero").to(AquaeroDevice.class);
+        mapbinder.addBinding("avm").to(AvmDevice.class);
         mapbinder.addBinding("ccu2").to(Ccu2Device.class);
         mapbinder.addBinding("dusty").to(DustyDevice.class);
         // Add more device implementations here...
