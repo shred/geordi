@@ -16,6 +16,7 @@
 package org.shredzone.geordi.service;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,13 +32,7 @@ import org.shredzone.geordi.data.Sample;
 public class CompactingServiceImpl implements CompactingService {
 
     private final Map<Integer, BigDecimal> lastValue = new HashMap<>();
-
-    @Override
-    public void rememberSample(Sample sample) {
-        if (sample.getSensor().isCompact()) {
-            lastValue.put(sample.getSensor().getId(), sample.getValue());
-        }
-    }
+    private final Map<Integer, Instant> lastUnchanged = new HashMap<>();
 
     @Override
     public boolean wasUnchanged(Sample sample) {
@@ -45,12 +40,46 @@ public class CompactingServiceImpl implements CompactingService {
             return false;
         }
 
-        BigDecimal last = lastValue.get(sample.getSensor().getId());
+        int id = sample.getSensor().getId();
+
+        BigDecimal last = lastValue.get(id);
         if (last == null) {
             return false;
         }
 
-        return last.compareTo(sample.getValue()) == 0;
+        boolean unchanged = last.compareTo(sample.getValue()) == 0;
+
+        if (unchanged) {
+            lastUnchanged.put(id, sample.getTimestamp());
+        }
+
+        return unchanged;
+    }
+
+    @Override
+    public Sample lastUnchanged(Sample sample) {
+        if (!sample.getSensor().isCompact()) {
+            return null;
+        }
+
+        int id = sample.getSensor().getId();
+        Instant ts = lastUnchanged.get(id);
+        BigDecimal value = lastValue.get(id);
+
+        if (ts == null || value == null) {
+            return null;
+        }
+
+        return new Sample(sample.getSensor(), ts, value);
+    }
+
+    @Override
+    public void rememberSample(Sample sample) {
+        if (sample.getSensor().isCompact()) {
+            int id = sample.getSensor().getId();
+            lastValue.put(id, sample.getValue());
+            lastUnchanged.remove(id);
+        }
     }
 
 }

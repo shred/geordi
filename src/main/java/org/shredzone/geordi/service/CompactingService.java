@@ -25,14 +25,6 @@ import org.shredzone.geordi.data.Sample;
 public interface CompactingService {
 
     /**
-     * Remember a {@link Sample} value.
-     *
-     * @param sample
-     *         {@link Sample} to remember
-     */
-    void rememberSample(Sample sample);
-
-    /**
      * Checks if the given {@link Sample} can be compacted.
      *
      * @param sample
@@ -41,5 +33,25 @@ public interface CompactingService {
      * sample's value is equal to the previously stored sensor value.
      */
     boolean wasUnchanged(Sample sample);
+
+    /**
+     * Regenerates the last unchanged {@link Sample} before the value has changed. This
+     * way, interpolations can start from the timestamp of the last unchanged value,
+     * instead of the first unchanged value.
+     *
+     * @param sample
+     *         {@link Sample} to regenerate the last unchanged sample for
+     * @return Regenerated {@link Sample}, or {@code null} if there was no last sample
+     * that could be generated
+     */
+    Sample lastUnchanged(Sample sample);
+
+    /**
+     * Remember a {@link Sample} value.
+     *
+     * @param sample
+     *         {@link Sample} to remember
+     */
+    void rememberSample(Sample sample);
 
 }

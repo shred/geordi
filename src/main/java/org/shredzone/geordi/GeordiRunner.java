@@ -15,8 +15,11 @@
  */
 package org.shredzone.geordi;
 
+import static java.util.stream.Collectors.toList;
+
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -112,7 +115,15 @@ public class GeordiRunner {
 
                 List<Sample> samples = new LinkedList<>(device.readSensors());
                 samples.removeIf(compactingService::wasUnchanged);
+
+                List<Sample> preSamples = samples.stream()
+                        .map(compactingService::lastUnchanged)
+                        .filter(Objects::nonNull)
+                        .collect(toList());
+
+                databaseService.storeSamples(preSamples);
                 databaseService.storeSamples(samples);
+
                 samples.forEach(compactingService::rememberSample);
             } catch (Exception ex) {
                 log.error("Failed to poll device {}", devId, ex);
