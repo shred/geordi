@@ -26,6 +26,7 @@ public class Sensor {
     private int id;
     private String name;
     private String unit;
+    private boolean compact;
     private JSONObject config;
 
     /**
@@ -68,6 +69,22 @@ public class Sensor {
      */
     public void setUnit(String unit) {
         this.unit = unit;
+    }
+
+    /**
+     * Checks if the sensor values are stored in a compact fashion. If {@code true},
+     * Geordi won't store a sensor value if it is equal to the previous value that was
+     * stored.
+     */
+    public boolean isCompact() {
+        return compact;
+    }
+
+    /**
+     * Sets the compact mode.
+     */
+    public void setCompact(boolean compact) {
+        this.compact = compact;
     }
 
     /**

@@ -15,6 +15,7 @@
  */
 package org.shredzone.geordi;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -25,13 +26,13 @@ import org.quartz.Job;
 import org.quartz.JobBuilder;
 import org.quartz.JobDetail;
 import org.quartz.JobExecutionContext;
-import org.quartz.JobExecutionException;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
 import org.quartz.Trigger;
 import org.quartz.TriggerBuilder;
 import org.shredzone.geordi.data.Sample;
 import org.shredzone.geordi.device.Device;
+import org.shredzone.geordi.service.CompactingService;
 import org.shredzone.geordi.service.DatabaseService;
 import org.shredzone.geordi.util.GuiceJobFactory;
 import org.slf4j.Logger;
@@ -100,14 +101,19 @@ public class GeordiRunner {
         @Inject
         private DatabaseService databaseService;
 
+        @Inject
+        private CompactingService compactingService;
+
         @Override
-        public void execute(JobExecutionContext context) throws JobExecutionException {
+        public void execute(JobExecutionContext context) {
             int devId = context.getJobDetail().getJobDataMap().getIntValue(ID_KEY);
             try {
                 Device device = databaseService.getDevice(devId);
 
-                List<Sample> samples = device.readSensors();
+                List<Sample> samples = new LinkedList<>(device.readSensors());
+                samples.removeIf(compactingService::wasUnchanged);
                 databaseService.storeSamples(samples);
+                samples.forEach(compactingService::rememberSample);
             } catch (Exception ex) {
                 log.error("Failed to poll device {}", devId, ex);
             }

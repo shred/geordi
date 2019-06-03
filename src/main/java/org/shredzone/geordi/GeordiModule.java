@@ -15,6 +15,8 @@
  */
 package org.shredzone.geordi;
 
+import com.google.inject.AbstractModule;
+import com.google.inject.multibindings.MapBinder;
 import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.postgres.PostgresPlugin;
 import org.quartz.Scheduler;
@@ -24,11 +26,10 @@ import org.shredzone.geordi.device.AquaeroDevice;
 import org.shredzone.geordi.device.Ccu2Device;
 import org.shredzone.geordi.device.Device;
 import org.shredzone.geordi.device.DustyDevice;
+import org.shredzone.geordi.service.CompactingService;
+import org.shredzone.geordi.service.CompactingServiceImpl;
 import org.shredzone.geordi.service.DatabaseService;
 import org.shredzone.geordi.service.DatabaseServiceImpl;
-
-import com.google.inject.AbstractModule;
-import com.google.inject.multibindings.MapBinder;
 
 /**
  * Guice module definitions for Geordi.
@@ -54,6 +55,7 @@ public class GeordiModule extends AbstractModule {
     @Override
     protected void configure() {
         bind(DatabaseService.class).to(DatabaseServiceImpl.class);
+        bind(CompactingService.class).to(CompactingServiceImpl.class);
 
         MapBinder<String, Device> mapbinder = MapBinder.newMapBinder(binder(), String.class, Device.class);
         mapbinder.addBinding("aquaero").to(AquaeroDevice.class);
