@@ -179,6 +179,17 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <detectLinks>true</detectLinks>
+                    <doclint>syntax,reference</doclint>
+                    <linksource>true</linksource>
+                    <locale>en</locale>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.5.3</version>
                 <configuration>
@@ -231,7 +242,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.0.1</version>
+                <version>3.1.0</version>
                 <configuration>
                     <detectLinks>true</detectLinks>
                     <doclint>syntax,reference</doclint>
@@ -308,13 +319,24 @@
             <activation>
                 <jdk>[9,)</jdk>
             </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <configuration>
+                            <source>8</source>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
             <reporting>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
                         <configuration>
-                            <additionalJOption combine.self="override">--no-module-directories</additionalJOption>
+                            <source>8</source>
                         </configuration>
                     </plugin>
                 </plugins>
