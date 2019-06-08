@@ -248,7 +248,7 @@ public class AvmDevice  extends Device {
             }
             return sb.toString();
         } catch (NoSuchAlgorithmException ex) {
-            throw new RuntimeException(ex); // Should never happen, md5 is standard
+            throw new IllegalStateException(ex); // Should never happen, md5 is standard
         }
     }
 
