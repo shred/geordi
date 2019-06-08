@@ -39,7 +39,6 @@ CREATE TABLE sensor (
   device_id integer NOT NULL REFERENCES device,
   name varchar(255) NOT NULL,
   unit varchar(20) NOT NULL,
-  compact boolean NOT NULL DEFAULT TRUE,
   config json NOT NULL default '{}'
 );
 

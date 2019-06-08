@@ -14,10 +14,9 @@ After that, insert rows into the `sensor` table for each sensor of that device. 
 * `device_id`: Database ID of the device that has been inserted in the previous step.
 * `name`: A human-readable name of the sensor that is read.
 * `unit`: The physical unit of the sensor value.
-* `compact`: If `true`, only changes are stored in database. If `false`, every valid sensor reading is stored, even if the sensor value is unchanged. Default is `true`.
 * `config`: A JSON structure containing further configuration parameters for the sensor (like a sensor identifier).
 
-You will find details about the device type, device config and sensor config in the [respective chapters](../device/index.html).
+You will find details about the device type, device config and sensor config in the [respective chapters](../device/index.html). There are also some [global sensor config parameters](./globals.html).
 
 If your database changes are completed, you need to restart Geordi. If it runs on systemd:
 

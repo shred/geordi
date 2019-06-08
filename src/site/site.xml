@@ -35,6 +35,7 @@
       <item name="How to Use" href="usage/index.html">
         <item name="Installation" href="usage/installation.html"/>
         <item name="Configuration" href="usage/configuration.html"/>
+        <item name="Global Options" href="usage/globals.html"/>
         <item name="Evaluation" href="usage/evaluation.html"/>
         <item name="Housekeeping" href="usage/housekeeping.html"/>
       </item>

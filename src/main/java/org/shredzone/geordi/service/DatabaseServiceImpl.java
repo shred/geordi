@@ -131,7 +131,6 @@ public class DatabaseServiceImpl implements DatabaseService {
                 sens.setName(rs.getString("name"));
                 sens.setUnit(rs.getString("unit"));
                 sens.setConfig(new JSONObject(rs.getString("config")));
-                sens.setCompact(rs.getBoolean("compact"));
                 return sens;
             } catch (JSONException ex) {
                 throw new SQLException("Bad config JSON", ex);
