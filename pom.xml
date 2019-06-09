@@ -19,7 +19,7 @@
 
     <groupId>org.shredzone.geordi</groupId>
     <artifactId>geordi</artifactId>
-    <version>1.1</version>
+    <version>1.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Geordi</name>
@@ -31,7 +31,7 @@
         <url>https://github.com/shred/geordi/</url>
         <connection>scm:git:git@github.com:shred/geordi.git</connection>
         <developerConnection>scm:git:git@github.com:shred/geordi.git</developerConnection>
-      <tag>v1.1</tag>
+      <tag>HEAD</tag>
   </scm>
     <issueManagement>
         <system>GitHub Issues</system>
