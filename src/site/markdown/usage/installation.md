@@ -94,6 +94,7 @@ To run Geordi on Linux via systemd, create a file `/usr/lib/systemd/system/geord
 ```
 [Unit]
 Description=Geordi, the sensor poller
+After=network.target
 
 [Service]
 EnvironmentFile=/etc/geordi.conf

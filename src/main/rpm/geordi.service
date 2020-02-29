@@ -1,5 +1,6 @@
 [Unit]
 Description=Geordi, the sensor poller
+After=network.target
 
 [Service]
 EnvironmentFile=/etc/geordi.conf
