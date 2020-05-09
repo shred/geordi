@@ -22,7 +22,7 @@ Supported Sensors
 * [luftdaten.info](./device/dusty.html) particulates sensors
 * [Aquaero](./device/aquaero.html) fan controllers
 * [AVM](./device/avm.html) smart home devices
-* [Kaminari](./kaminari.html) Franklin lightning detectors
+* [Kaminari](./device/kaminari.html) Franklin lightning detectors
 
 Open Source
 -----------

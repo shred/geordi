@@ -19,6 +19,7 @@ It is written in Java and runs on any operating system.
 * [luftdaten.info](https://luftdaten.info/) particulates sensors
 * [Aquaero](https://aquacomputer.de/aquaero-5.html) fan controllers (via [Pyquaero](https://github.com/shred/pyquaero))
 * [AVM](https://avm.de) smart home components (via FRITZ!Box).
+* [Kaminari](https://kaminari.shredzone.org) Franklin lightning detector
 
 Other sensor sources can be added easily.
 
