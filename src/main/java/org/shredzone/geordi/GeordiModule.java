@@ -27,6 +27,7 @@ import org.shredzone.geordi.device.AvmDevice;
 import org.shredzone.geordi.device.Ccu2Device;
 import org.shredzone.geordi.device.Device;
 import org.shredzone.geordi.device.DustyDevice;
+import org.shredzone.geordi.device.KaminariDevice;
 import org.shredzone.geordi.service.CompactingService;
 import org.shredzone.geordi.service.CompactingServiceImpl;
 import org.shredzone.geordi.service.DatabaseService;
@@ -63,6 +64,7 @@ public class GeordiModule extends AbstractModule {
         mapbinder.addBinding("avm").to(AvmDevice.class);
         mapbinder.addBinding("ccu2").to(Ccu2Device.class);
         mapbinder.addBinding("dusty").to(DustyDevice.class);
+        mapbinder.addBinding("kaminari").to(KaminariDevice.class);
         // Add more device implementations here...
 
         try {
