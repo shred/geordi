@@ -17,7 +17,7 @@ It is written in Java and runs on any operating system.
 
 * [Homematic](https://www.eq-3.de/) home automation devices (via CCU2, CCU3)
 * [luftdaten.info](https://luftdaten.info/) particulates sensors
-* [Aquaero](https://aquacomputer.de/aquaero-5.html) fan controllers (via [Pyquaero](https://github.com/shred/pyquaero))
+* [Aquaero](https://aquacomputer.de/aquaero-5.html) fan controllers (via [Pyquaero](https://codeberg.org/shred/pyquaero))
 * [AVM](https://avm.de) smart home components (via FRITZ!Box).
 * [Kaminari](https://kaminari.shredzone.org) Franklin lightning detector
 
@@ -31,8 +31,8 @@ Please note that Geordi does not come with a fancy installer or a configuration 
 
 ## Contribute
 
-* Fork the [Source code at GitHub](https://github.com/shred/geordi). Feel free to send pull requests.
-* Found a bug? [File a bug report!](https://github.com/shred/geordi/issues)
+* Fork the [Source code at Codeberg](https://codeberg.org/shred/geordi). Feel free to send pull requests.
+* Found a bug? [File a bug report!](https://codeberg.org/shred/geordi/issues)
 
 ## Licenses
 

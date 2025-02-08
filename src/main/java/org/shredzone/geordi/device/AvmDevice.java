@@ -2,7 +2,7 @@
  * geordi
  *
  * Copyright (C) 2019 Richard "Shred" Körber
- *   https://github.com/shred/geordi
+ *   https://codeberg.org/shred/geordi
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as

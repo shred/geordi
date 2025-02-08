@@ -2,7 +2,7 @@
  * geordi
  *
  * Copyright (C) 2018 Richard "Shred" Körber
- *   https://github.com/shred/geordi
+ *   https://codeberg.org/shred/geordi
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -38,7 +38,7 @@ import org.shredzone.geordi.service.DatabaseService;
 
 /**
  * A {@link Device} implementation that reads Aquaero fan controllers. It
- * requires a running <a href="https://github.com/shred/pyquaero">Pyquaero</a> server that
+ * requires a running <a href="https://codeberg.org/shred/pyquaero">Pyquaero</a> server that
  * is connected to the Aquaero device.
  *
  * @see <a href="https://aquacomputer.de">Aqua Computer GmbH &amp; Co. KG</a>

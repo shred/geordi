@@ -11,11 +11,11 @@ Geordi requires:
 
 ## Getting the Binary
 
-You can download a precompiled `geordi.jar` file [at GitHub](https://github.com/shred/geordi/releases). It is a static jar file that already contains Geordi and all the required libraries it depends on.
+You can download a precompiled `geordi.jar` file [at Codeberg](https://codeberg.org/shred/geordi/releases). It is a static jar file that already contains Geordi and all the required libraries it depends on.
 
-To build Geordi yourself, check out the project [at GitHub](https://github.com/shred/geordi) and build it with maven (`mvn clean install`). You will then find the `geordi.jar` file in the `target` folder of your checkout.
+To build Geordi yourself, check out the project [at Codeberg](https://codeberg.org/shred/geordi) and build it with maven (`mvn clean install`). You will then find the `geordi.jar` file in the `target` folder of your checkout.
 
-For RedHat based systems, there is also a rpm file [at GitHub](https://github.com/shred/geordi/releases). After installation, just edit the `/etc/geordi.conf` file and start Geordi via systemd as described below.
+For RedHat based systems, there is also a rpm file [at Codeberg](https://codeberg.org/shred/geordi/releases). After installation, just edit the `/etc/geordi.conf` file and start Geordi via systemd as described below.
 
 ## Database
 

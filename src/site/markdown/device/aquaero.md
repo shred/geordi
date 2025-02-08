@@ -4,7 +4,7 @@ Aquaero is a fan controller by [Aqua Computer](https://aquacomputer.de/).
 
 Geordi is able to read all sensor values of an Aquaero device, like temperatures, fan speeds or fan voltages.
 
-[Pyquaero](https://github.com/shred/pyquaero) must be installed and running on the system the Aquaero is connected to via USB.
+[Pyquaero](https://codeberg.org/shred/pyquaero) must be installed and running on the system the Aquaero is connected to via USB.
 
 Pyquaero provides a tiny web server that provides all sensor readings as JSON structure. Geordi connects to that server. It is possible to read multiple Aquaero devices, even on different machines, with one Geordi instance.
 
